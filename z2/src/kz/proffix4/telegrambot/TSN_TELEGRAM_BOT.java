@@ -43,7 +43,7 @@ class MyTelegramBot extends TelegramLongPollingBot {
     // Тут задается нужное значение токена для связи с Telegram
     @Override
     public String getBotToken() {
-        return "5447748439:AAFGCd7Qv_6CRbI7L--OS-ugqaJHFFxe9pk";
+        return "----";
     }
 
     // Метод обработки команд бота
