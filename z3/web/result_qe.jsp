@@ -16,8 +16,7 @@
             if (result_qe == null) {
                 out.print("Нет решения!<br/><br/>");
             } else {
-                out.println(String.format("x1= %.3f<br/>", result_qe.getX1()));
-                out.println(String.format("x2= %.3f<br/>", result_qe.getX2()));
+                out.println(String.format("y= %.3f<br/>", result_qe.getY()));
             }
         %>
 </html>

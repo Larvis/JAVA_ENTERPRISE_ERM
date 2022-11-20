@@ -20,14 +20,24 @@ public class Main extends HttpServlet {
         // Обрабатываем кнопку <input type="submit" name="calcQE" value="Решить" /> <br />
         if (request.getParameter("calcQE") != null) {
             ResultQE resultQE = null;
+            
             try {
                 double a = Double.parseDouble(request.getParameter("a"));
                 double b = Double.parseDouble(request.getParameter("b"));
                 double c = Double.parseDouble(request.getParameter("c"));
-                double d = Math.pow(b, 2) - 4 * a * c;
-                double x1 = (-b + Math.sqrt(d)) / (2 * a);
-                double x2 = (-b - Math.sqrt(d)) / (2 * a);
-                resultQE = new ResultQE(x1, x2);
+                double x = Double.parseDouble(request.getParameter("x"));
+                double y;
+                
+                if(x < 8)
+                {
+                    y = (6 * (Math.pow(a, 2) + x + Math.pow(b, 2)))/(a * b * x);
+                }
+                else
+                {
+                    y = 4 * (Math.pow(a, 2) - x + Math.pow(b, 2));
+                }
+                        
+                resultQE = new ResultQE(y);
             } catch (Exception e) {
             }
             request.setAttribute("resultQE", resultQE);
@@ -41,8 +51,8 @@ public class Main extends HttpServlet {
                 double a = Double.parseDouble(request.getParameter("a"));
                 double b = Double.parseDouble(request.getParameter("b"));
                 double c = Double.parseDouble(request.getParameter("c"));
-                double d = Double.parseDouble(request.getParameter("d"));
-                double sum = a + b + c + d;
+                double x = Double.parseDouble(request.getParameter("x"));
+                double sum = a + b + c + x;
                 request.setAttribute("sum", sum);
                 getServletContext().getRequestDispatcher("/result_sum.jsp").forward(request, response);
                 return;
