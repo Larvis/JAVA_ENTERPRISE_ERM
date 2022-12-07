@@ -1,3 +1,3 @@
 # ERM_RMI_CLIENT_SERVER
 Пример клиент-серверной программы на Java с использованием технологии RMI в NetBeans
-![screenshot](scr1.png)
+![screenshot](scr.jpg)
